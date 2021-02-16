@@ -11,3 +11,6 @@ Telehealth is a web application which allows psychologists to book appointments 
 - AWS Rekognition
 - Micro-Services
 - Real-Time Data Analysis
+
+## Software Architecture
+![Software-arch](/Images/Software-arch.png)
