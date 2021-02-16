@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+<body>
+Cognito Test
+<form style="border: 1px solid black; padding: 10px;" action="/auth/signup/" method="post">
+    <p> Email: <input type="email" name="Email" /></p>
+    <p> Username: <input type="text" name="Username" /></p>
+    <p> Password: <input type="password" name="Password" /></p>
+    <button type="submit">signup</button>
+</form>
+
+<form style="border: 1px solid black; padding: 10px;" action="/auth/resend/confirm/" method="post">
+    <p> Email: <input type="email" name="Email" /></p>
+    <button type="submit">resend confirm</button>
+</form>
+
+<form style="border: 1px solid black; padding: 10px;" action="/auth/confirm/signup/" method="post">
+    <p> Email: <input type="email" name="Email" /></p>
+    <p> Confirm Code: <input type="number" name="ConfirmCode" /></p>
+    <button type="submit">confirm signup</button>
+</form>
+
+<form style="border: 1px solid black; padding: 10px;" action="/auth/forgot/password/" method="post">
+    <p> Email: <input type="email" name="Email" /></p>
+    <button type="submit">forgot password</button>
+</form>
+
+<form style="border: 1px solid black; padding: 10px;" action="/auth/confirm/forgot/password/" method="post">
+    <p> Email: <input type="email" name="Email" /></p>
+    <p> Confirm Code: <input type="number" name="ConfirmCode" /></p>
+    <button type="submit">confirm forgot password</button>
+</form>
+
+<form style="border: 1px solid black; padding: 10px;" action="/auth/login" method="post">
+    <p> Email: <input type="email" name="Email" /></p>
+    <p> Password: <input type="password" name="Password" /></p>
+    <button type="submit">Login</button>
+</form>
+
+</body>
+</html>

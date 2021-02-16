@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Lobster');
+
+/* This allow me to have the full width of the page without the initial padding/margin*/
+body, html {
+  margin:0;
+  padding:0;
+  height: 100%;
+  width:100%;
+  font-family:Acme;
+  min-width:700px;
+}
+
+.splitdiv{
+  height:100%;
+  width:50%;
+}
+
+/* This part contains all of the left side of the screen */
+/* ----------------------------------------- */
+#leftdiv{
+  float:left;
+  background-color:#FAFAFA;
+}
+
+#leftdivcard{
+  margin:0 auto;
+  width:50%;
+  background-color:white;
+  margin-top: 50vh; 
+  transform: translateY(-50%);
+  box-shadow: 10px 10px 1px 0px rgba(78, 205, 196, .2);
+  border-radius:10px
+}
+
+#leftbutton{
+    background-color:#4ECDC4;
+    border-radius:5px;
+    color:#FAFAFA;
+    text-align: center;
+}
+
+/* ----------------------------------------- */
+
+/* This part contains all of the left side of the screen */
+/* ----------------------------------------- */
+#rightdiv{
+  float:right;
+  background-color:#4ECDC4;
+}
+
+#rightdivcard{
+  margin:0 auto;
+  width:50%;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+  background-image: linear-gradient(to right, white 33%,  rgba(255,255,255,0) 0%);
+  background-position: bottom;
+  background-size: 20px 2px;
+  background-repeat: repeat-x;
+}
+
+#rightbutton{
+    background-color:#FFFFFF;
+    border-radius:5px;
+    color:#4ECDC4;
+}
+/* ----------------------------------------- */
+
+/* Basic styling */
+/* ----------------------------------------- */
+
+h1{
+  font-family:Lobster;
+  color:#4ECDC4
+}
+
+input{
+  font-family:Acme;
+  font-size:16px;
+}
+
+input{
+  width:85%;
+  height:40px;
+  padding:10px;
+  margin-left:2%;
+  margin-right:2%;
+  margin-top:10px;
+  margin-bottom:10px;
+  display:inline-block;
+  background-color:#FAFAFA;
+  border:none;
+}
+
+input:focus {
+    outline: none !important;
+    border:1px solid #4ECDC4;
+    box-shadow: 0 0 5px #719ECE;
+}
+
+button{
+  outline: none !important;
+  font-family:Lobster;
+  margin-bottom:15px;
+  border:none;
+  font-size:20px;
+  padding:8px;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+/* ----------------------------------------- */
+
+/* Animation for the buttons from 
+
+https://codepen.io/finnhvman/pen/jLXKJw
+
+*/
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #4ECDC4 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #4ECDC4;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.ripple2 {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple2:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #FFFFFF 1%) center/15000%;
+}
+.ripple2:active {
+  background-color: #FAFAFA;
+  background-size: 100%;
+  transition: background 0s;
+}
+

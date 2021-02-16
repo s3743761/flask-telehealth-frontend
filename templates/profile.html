@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script>
+    $(document).ready(function() {
+        $('.nav-btn').on('click', function(event) {
+            event.preventDefault();
+            /* Act on the event */
+            $('.sidebar').slideToggle('fast');
+    
+            window.onresize = function(){
+                if ($(window).width() >= 768) {
+                    $('.sidebar').show();
+                } else {
+                    $('.sidebar').hide();
+                }
+            };
+        });
+    });
+    </script>
+    <style>
+        .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        }
+
+        .title {
+        color: grey;
+        font-size: 18px;
+        }
+
+        button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+        }
+
+        
+        sbutton {
+            background-color: darkblue;
+            color: white;
+            text-align: center;
+            /* color: white; */
+            width: 7vw;
+            height: 3vw;
+        }
+
+        a {
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+        }
+
+        button:hover, a:hover {
+        opacity: 0.7;
+        }
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    .myButton{
+        background-color: darkblue;
+        text-align: center;
+        color: white;
+        width: 5vw;
+        height: 3vw;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    </style>
+    <header>
+            <div class="logo">Xero<span>Source</span></div>
+            <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/dash.css') }}">
+            <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/sheet.css') }}">
+
+    
+        </header>
+        <div class="nav-btn">Menu</div>
+        <div class="container">
+            
+            <div class="sidebar">
+                <nav>
+                    <a href="#">Op<span>tions</span></a>
+                    <ul>  
+                        <li><a href="{{ url_for('dynamoRoute.create_booking') }}">Create Booking</a></li>
+                        <li><a href="{{ url_for('dynamoRoute.get_bookings') }}">View My Bookings</a></li>
+                        <li><a href="{{ url_for('cognitoRoute.about_page') }}">About</a></li>
+                        <li><a href="{{ url_for('cognitoRoute.contact_page') }}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+    
+            <div class="main-content">
+                <h1>Profile</h1>
+                <div class="panel-wrapper">
+                    <div class="card">
+                        <img src="{{ user_image }}" id="myImage" alt="User Image" style="width:100%">
+                        
+                        <h1> {{ name }}</h1>
+                        <p class="title">{{ email }}</p>
+                        <p> {{ contact }}</p>
+                        <button id="myBtun" class="button is-success">Edit Profile</button>
+
+                        <button id="myBtn" class="button is-success">Change Password</button>
+
+                        <p></p><button type="submit"  onclick="location.href='/Adminhome'" class="button is-success">Dashboard</button></p>
+
+                    </div>
+                </div>
+                
+
+        <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="login-form" action="/change_password" method="post">
+                    <p><label for="password">Previous Password</label>
+                    <input type="password" id="email"  name="previous_password" required/></p>
+                    <p><label for="password">New Password</label>
+                    <input type="password" id="email"  name="new_password" required/></p>
+                    <p><button type="submit" class= "sbutton">Change Password</button></p>
+                </form>
+            </div>
+
+            </div>
+            <div id="myModal" class="modal">
+        </div>
+
+
+        <div id="myModel" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="closes">&times;</span>
+                <main id="main-holder">
+                    <h1 id="login-header">Edit Profile</h1>
+                    <form action="/edit_profile" method="post" enctype="multipart/form-data">
+                        <label>Select image</label>
+                          <input type="file" class="custom-file-input" name="image" id="image">
+                          <label class="custom-file-label" for="image"></label>
+                          <br>
+                          Name: <input type="text" name="name" id="username-field" class="login-form-field" value = {{name}}></input><br>
+                          Contact: <input type="text" name="contact" id="username-field" class="login-form-field" value = {{contact}}></input><br>
+                          <input type="submit" id="login-form-submit" name="action" value="Edit"></input>
+                    </form>
+                </main>
+                </body>
+            </div>
+
+            </div>
+            </div>
+            
+        
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            var model = document.getElementById("myModel");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+            var btns = document.getElementById("myBtun");
+
+            
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            var spans = document.getElementsByClassName("closes")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
+            btns.onclick = function() {
+              model.style.display = "block";
+            }
+
+  
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+            spans.onclick = function() {
+              model.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+
+            window.onclick = function(event) {
+              if (event.target == model) {
+                model.style.display = "none";
+              }
+            }
+        </script>
+    </html>
+

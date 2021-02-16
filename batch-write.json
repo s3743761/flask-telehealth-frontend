@@ -1,0 +1,59 @@
+{
+    "Users": [
+      {
+        "PutRequest": {
+          "Item":
+          {
+            "email": {
+              "S": "mail2@mail2.com"
+            },
+            "name": {
+              "S": "test"
+            },
+            "contact": {
+              "S": "1643"
+            },
+            "password": {
+              "S": "test"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "email": {
+                "S": "mail@mail.com"
+            },
+            "name": {
+                "S": "test2"
+            },
+            "contact": {
+                "S": "1535"
+            },
+            "password": {
+                "S": "test2"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item" : {
+            "email": {
+                "S": "mail3@mail3.com"
+            },
+            "name": {
+                "S": "test3"
+            },
+            "contact": {
+                "S": "143"
+            },
+            "password": {
+                "S": "test3"
+            }
+          }
+        }
+      }
+    ]
+  }

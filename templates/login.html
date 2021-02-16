@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/sty.css') }}">
+</head>
+<style>
+.message{
+  color:red
+}
+</style>
+<html>
+  <!-- If you ever use this tell me and show me ! @kryze :) -->
+  <body>
+    <div style="height:100%;width:100%;display:inline-block">
+      
+    <div class="splitdiv" id="leftdiv">
+      <div id="leftdivcard">
+        <h1 style="padding-top:20px;text-align:center">Sign In</h1>
+        <p class="message">{{ error }}</p>
+        <form id="login-form" action="/auth/login" method="post">
+
+            <div class="inset">
+                <p>
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="email" id="email"  name="Email" />
+                </p>
+                <p>
+                    <label for="password">PASSWORD</label>
+                    <input type="password" id="password" name="Password" />
+                </p>
+                
+            </div>
+            <p class="p-container">
+                
+            <!-- <p class="p-container">    <a href="{{ url_for('cognitoRoute.create_account') }}"> <span>Sign Up!</span></a> -->
+                <!-- <input type="submit" name="go" id="go" value="Log in"> -->
+                <button id="leftbutton" type="submit" class="ripple2">Login</button>
+
+            </p>
+        </form>
+          <div style="text-align:center">
+          </div>
+      </div>
+    </div>
+      
+    <div class="splitdiv" id="rightdiv">
+      <div id="rightdivcard">
+        <h1 style="padding-top:20px;text-align:center;color:white">New here ?</h1>
+        <p style="color:white;text-align:center">Do you want to discover new things ? Just Register !</p>
+        <div style="text-align:center">
+            <a href="{{ url_for('cognitoRoute.create_account') }}"> <button id="rightbutton" class="ripple">Sign Up</button></a>
+        </div>
+      </div>
+    </div>
+      
+    </div>
+  </body>
+</html>
+
+

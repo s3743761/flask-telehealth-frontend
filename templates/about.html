@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script>
+    $(document).ready(function() {
+        $('.nav-btn').on('click', function(event) {
+            event.preventDefault();
+            /* Act on the event */
+            $('.sidebar').slideToggle('fast');
+    
+            window.onresize = function(){
+                if ($(window).width() >= 768) {
+                    $('.sidebar').show();
+                } else {
+                    $('.sidebar').hide();
+                }
+            };
+        });
+    });
+    </script>
+    <header>
+            <div class="logo">Xero<span>Source</span></div>
+            <!-- <link rel="stylesheet" href="dash.css"> -->
+            <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/dash.css') }}">
+
+    
+        </header>
+        <div class="nav-btn">Menu</div>
+        <div class="container">
+            
+            <div class="sidebar">
+                <nav>
+                    <a href="#">Op<span>tions</span></a>
+                    <ul>  
+                        <li ><a href="{{ url_for('cognitoRoute.admin_home') }}">User Dashboard</a></li>
+                        <li><a href="{{ url_for('dynamoRoute.create_booking') }}">Create Booking</a></li>
+                        <li><a href="{{ url_for('dynamoRoute.get_bookings') }}">View My Bookings</a></li>
+                        <li class="active"><a href="#">About</a></li>
+                        <li ><a href="{{ url_for('cognitoRoute.contact_page') }}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+    
+            <div class="main-content">
+                <h1>About</h1>
+                <a href="{{ url_for('cognitoRoute.login') }}"><button class="button_log_out">Logout</button></a>
+
+                <p>How it all started?</p>
+                <div class="panel-wrapper">
+                    <div class="panel-head">
+                        The Project
+                    </div>
+                    <div class="panel-body">
+                        <p>The idea basically comes from the pandemic we are going through, and which has made it difficult for us to go back to our normal life. As we ourselves went through a lockdown, we know how much trauma it can cause and how much there is a need to look at one’s mental health. We thought this will contribute highly for the prevention of mental disorders, as psychiatrist can use this application to meet their patients and get to know how their patients are going through in tough times like these. Keeping in mind that psychiatrist cannot tell much by just looking at the person through video call, we used AWS recognition to tell psychiatrist the state of emotions their patients are going through, which is going to be very helpful for the doctor to know how the session could be conducted. </p>
+                        <p></p>
+                    </div>
+                </div>
+                <!-- <div class="panel-wrapper">
+                    <div class="panel-head">
+                        Prabhav Mohit Mehra
+                    </div>
+                    <div class="panel-body">
+                        <p>Student Number: </p>
+                        <p>Email: </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </html>
+
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+<body>
+
+<button type="submit"  onclick="location.href='/profile'" class="button is-success">Profile</button>
+
+
+</body>
+</html>

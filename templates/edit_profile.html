@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/sty.css') }}">
+  </head> 
+
+<body>
+  <title>Login</title>
+  <main id="main-holder">
+    <h1 id="login-header">Edit Profile</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label>Select image</label>
+          <input type="file" class="custom-file-input" name="image" id="image">
+          <label class="custom-file-label" for="image"></label>
+          <br>
+          Name: <input type="text" name="name" id="username-field" class="login-form-field" value = {{name}}></input><br>
+          Contact: <input type="text" name="contact" id="username-field" class="login-form-field" value = {{contact}}></input><br>
+          <input type="submit" id="login-form-submit" name="action" value="Edit"></input>
+    </form>
+</main>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
