@@ -15,11 +15,4 @@ Telehealth is a web application which allows psychologists to book appointments 
 ## Software Architecture
 ![Software-arch](/Images/Software-arch.png)
 
-## Demo
-![sign-up](/Images/sign-up.png)
-![dashboard](/Images/dashboard.png)
-![video-calling](/Images/video-call.png)
-![bookings](/Images/bookings.png)
-![data-analysis](/Images/data-analysis.png)
-![profile](/Images/profile.png)
 
